@@ -1,0 +1,23 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Latest message</mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngIf="lastMessage != null && total != null">
+        <div>
+            <span class="mat-body-2">Id: </span>
+            Id {{lastMessage.id}}
+        </div>
+        <div>
+            <span class="mat-body-2">Content: </span>
+            {{lastMessage.content}}
+        </div>
+        <div>
+            <span class="mat-body-2">Created: </span>
+            {{lastMessage.created}}
+        </div>
+        <div>
+            <span class="mat-body-2">Total: </span>
+            {{total}}
+        </div>
+    </mat-card-content>
+  </mat-card>
