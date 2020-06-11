@@ -1,0 +1,16 @@
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span>My Application</span>
+      <nav>
+        <a mat-button [routerLink]="['/messages']">Messages</a>
+        <a mat-button [routerLink]="['/create-message']">Create message</a>
+        <a mat-button [routerLink]="['/lastest-message']">Lastest message</a>
+      </nav>
+    </mat-toolbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

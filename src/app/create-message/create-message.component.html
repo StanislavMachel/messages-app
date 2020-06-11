@@ -1,0 +1,10 @@
+<form [formGroup]="messageForm" (ngSubmit)="messageForm.valid && onSubmit(messageForm.value)" #form="ngForm">
+    <div style="width: 100%">
+        <mat-form-field>
+            <mat-label>Content</mat-label>
+            <textarea required matInput placeholder="Insert message" formControlName="content" rows="4"></textarea>
+        </mat-form-field>
+    </div>
+    
+    <button mat-button color="primary" type="submit">Create</button>
+</form>
