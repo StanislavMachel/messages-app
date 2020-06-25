@@ -3,8 +3,10 @@
         <mat-form-field>
             <mat-label>Content</mat-label>
             <textarea required matInput placeholder="Insert message" formControlName="content" rows="4"></textarea>
+            <mat-error *ngIf="content.errors && content.errors.blank">
+              Content cannot be blank
+            </mat-error>
         </mat-form-field>
     </div>
-    
     <button mat-button color="primary" type="submit">Create</button>
 </form>
