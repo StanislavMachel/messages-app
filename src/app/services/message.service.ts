@@ -9,11 +9,11 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class MessageService {
 
-  readonly url = 'http://localhost:8080/api/messages'
+  readonly url = 'http://localhost:8080/api/messages';
 
   constructor(private http: HttpClient) { }
 
-  getMessages() : Observable<Message[]> {
+  getMessages(): Observable<Message[]> {
     return this.http.get<Message[]>(this.url);
   }
 
@@ -21,7 +21,7 @@ export class MessageService {
     return this.http.get(this.url + '/latest');
   }
 
-  createMessage(message: Message) : Observable<Message>{
+  createMessage(message: Message): Observable<Message>{
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -32,7 +32,7 @@ export class MessageService {
     return this.http.post<Message>(this.url, message, httpOptions)
     .pipe(
       catchError(this.handleError('createMessage', message))
-    )
+    );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

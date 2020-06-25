@@ -20,7 +20,7 @@ export class LastMessageComponent implements OnInit {
 
     const url = 'http://localhost:8080/api/messages/latest';
 
-    this.messageService.getLatestMessage().subscribe((response: any) =>{
+    this.messageService.getLatestMessage().subscribe((response: any) => {
       console.log(response);
       this.lastMessage = response.latest;
       this.total = response.total;

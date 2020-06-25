@@ -14,22 +14,20 @@ export class CreateMessageComponent implements OnInit {
 
   messageForm;
 
-  constructor(private formBuilder: FormBuilder, private messageService: MessageService, private _snackBar: MatSnackBar) { 
+  constructor(private formBuilder: FormBuilder, private messageService: MessageService, private snackBar: MatSnackBar) {
     this.messageForm = this.formBuilder.group({
       content: ''
     });
   }
 
   ngOnInit(): void {
-    
   }
 
   onSubmit(messageForm) {
     this.messageService.createMessage({id: null, content : messageForm.content, created: null}).subscribe(message => {
-      
       this.form.resetForm();
-    
-      this._snackBar.open('Message created', null, {
+
+      this.snackBar.open('Message created', null, {
         duration: 2000
       });
     });
